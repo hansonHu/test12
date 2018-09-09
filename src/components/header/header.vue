@@ -4,14 +4,22 @@
   </mt-header>
 </template>
 
+
 <script type="text/ecmascript-6">
     export default {
       methods:{
         login:function () {
-         console.log(this.$router)
+         console.log(this.$router);
           this.$router.push("/login")
       }
-    }
+    },
+      created:function () {
+        console.log("create");
+        let userName =  window.localStorage.getItem("userName");
+        if(!userName){
+          console.log("没有登录过")
+        }
+      },
     }
 </script>
 
